@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="./styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <title>Technical Documentation</title>
+  </head>
+  <body>
+    <nav id="navbar">
+      <header>
+        <div class="js-logo">JS</div>
+        <div class="header-text">JavaScript</div>
+      </header>
+      <ul>
+        <li>
+          <a class="nav-link" href="#introduction">Introduction</a>
+        </li>
+        <li>
+          <a class="nav-link" href="#basics">Basics</a>
+        </li>
+        <li>
+          <a class="nav-link" href="#hello_world">Hello World</a>
+        </li>
+        <li>
+          <a class="nav-link" href="#variables">Variables</a>
+        </li>
+        <li>
+          <a href="#constants" class="nav-link">Constants</a>
+        </li>
+        <li>
+          <a href="#data_types" class="nav-link">Data Types</a>
+        </li>
+        <li>
+          <a href="#functions" class="nav-link">Functions</a>
+        </li>
+        <li>
+          <a href="#references" class="nav-link">References</a>
+        </li>
+      </ul>
+    </nav>
+
+    <main id="main-doc">
+      <section class="main-section" id="introduction">
+        <header>Introduction</header>
+        <p>
+          <span class="important">JavaScript (JS)</span> is a lightweight,
+          interpreted, or just-in-time compiled programming language with
+          first-class functions. While it is most well-known as the scripting
+          language for Web pages, many non-browser environments also use it,
+          such as Node.js, Apache CouchDB and Adobe Acrobat. JavaScript is a
+          prototype-based, multi-paradigm, single-threaded, dynamic language,
+          supporting object-oriented, imperative, and declarative (e.g.
+          functional programming) styles. Read more about JavaScript.
+        </p>
+        <p>
+          The standards for JavaScript are the ECMAScript Language Specification
+          (ECMA-262) and the ECMAScript Internationalization API specification
+          (ECMA-402). The JavaScript documentation throughout MDN is based on
+          the latest draft versions of ECMA-262 and ECMA-402. And in cases where
+          some proposals for new ECMAScript features have already been
+          implemented in browsers, documentation and examples in MDN articles
+          may use some of those new features.
+        </p>
+      </section>
+
+      <section class="main-section" id="basics">
+        <header>Basics</header>
+        <p>
+          JavaScript borrows most of its syntax from Java, C, and C++, but it
+          has also been influenced by Awk, Perl, and Python.
+        </p>
+        <p>
+          JavaScript is case-sensitive and uses the Unicode character set. For
+          example, the word Früh (which means "early" in German) could be used
+          as a variable name.
+        </p>
+        <code
+          ><span class="keyword">let</span> Früh =
+          <span class="string">"foobar"</span></code
+        >
+        <p>
+          But, the variable früh is not the same as Früh because JavaScript is
+          case sensitive. In JavaScript, instructions are called statements and
+          are separated by semicolons (;). A semicolon is not necessary after a
+          statement if it is written on its own line. But if more than one
+          statement on a line is desired, then they must be separated by
+          semicolons.
+        </p>
+        <p class="note">
+          <span class="bold">Note:</span> ECMAScript also has rules for
+          automatic insertion of semicolons (ASI) to end statements. (For more
+          information, see the detailed reference about JavaScript's lexical
+          grammar.)
+        </p>
+        <p>
+          It is considered best practice, however, to always write a semicolon
+          after a statement, even when it is not strictly needed. This practice
+          reduces the chances of bugs getting into the code. The source text of
+          JavaScript script gets scanned from left to right, and is converted
+          into a sequence of input elements which are tokens, control
+          characters, line terminators, comments, or whitespace. (Spaces, tabs,
+          and newline characters are considered whitespace.)
+        </p>
+      </section>
+
+      <section class="main-section" id="hello_world">
+        <header>Hello World</header>
+        <p>
+          To get started with writing JavaScript, open the Web Console in
+          multi-line mode, and write your first "Hello world" JavaScript code:
+        </p>
+        <code>
+          (<span class="keyword">function</span>(){<br />
+          <span class="string">"use strict"</span>;<br />
+          /* Start of your code */<br />
+          <span class="keywork">function</span>
+          <span class="function">greetMe</span>(yourName) {<br />
+          <span class="function">alert</span>(<span class="string"
+            >'Hello '</span
+          >
+          + yourName); <br />}<br />
+
+          <span class="function">greetMe</span>(<span class="string"
+            >'World'</span
+          >);<br />
+          /* End of your code */<br />
+          })();
+        </code>
+      </section>
+
+      <section class="main-section" id="variables">
+        <header>Variables</header>
+        <p>
+          You use variables as symbolic names for values in your application.
+          The names of variables, called identifiers, conform to certain rules.
+        </p>
+        <p>
+          A JavaScript identifier must start with a letter, underscore (_), or
+          dollar sign ($). Subsequent characters can also be digits (0–9).
+          Because JavaScript is case sensitive, letters include the characters
+          "A" through "Z" (uppercase) as well as "a" through "z" (lowercase).
+          You can use most of ISO 8859-1 or Unicode letters such as å and ü in
+          identifiers. (For more details, see this blog post.) You can also use
+          the Unicode escape sequences as characters in identifiers. Some
+          examples of legal names are
+          <span class="important">Number_hits</span>,
+          <span class="important">temp99</span>,
+          <span class="important">$credit</span>, and
+          <span class="important">_name</span>. You can declare a variable in
+          two ways:
+        </p>
+        <ul>
+          <li>
+            <p>
+              With the keyword var. For example,
+              <span class="important">var x = 42</span>. This syntax can be used
+              to declare both local and global variables, depending on the
+              execution context.
+            </p>
+          </li>
+          <li>
+            <p>
+              With the keyword const or let. For example,
+              <span class="important">let y = 13</span>. This syntax can be used
+              to declare a block-scope local variable. (See Variable scope
+              below.)
+            </p>
+          </li>
+        </ul>
+      </section>
+
+      <section class="main-section" id="constants">
+        <header>Constants</header>
+        <p>
+          You can create a read-only, named constant with the const keyword.The
+          syntax of a constant identifier is the same as any variable
+          identifier: it must start with a letter, underscore, or dollar sign
+          ($), and can contain alphabetic, numeric, or underscore characters.
+        </p>
+        <code
+          ><span class="keyword">const</span> <span class="string">PI</span> =
+          <span class="string">3.14</span>;</code
+        >
+        <p>
+          A constant cannot change value through assignment or be re-declared
+          while the script is running. It must be initialized to a value. The
+          scope rules for constants are the same as those for let block-scope
+          variables. If the const keyword is omitted, the identifier is assumed
+          to represent a variable. You cannot declare a constant with the same
+          name as a function or variable in the same scope. For example:
+        </p>
+        <code>
+          // THIS WILL CAUSE AN ERROR <br />
+          <span class="keyword">function</span>
+          <span class="function">f</span>() {};<br />
+          <span class="keyword">const</span> f = <span class="string">5;</span>
+          <br /><br />
+          // THIS WILL CAUSE AN ERROR TOO <br />
+          <span class="keyword">function</span>
+          <span class="function">f</span>() { <br />
+          <span class="keyword">const</span> g = <span class="string">5</span>
+          <br />
+          <span class="keyword">var</span> g; <br />
+          //statements<br />
+          }
+        </code>
+        <p>
+          However, the properties of objects assigned to constants are not
+          protected, so the following statement is executed without problems.
+        </p>
+        <code>
+          <span class="keyword">const</span>
+          <span class="string">MY_OBJECT</span> = {<span class="function"
+            >'key'</span
+          >
+          : <span class="string">'value'</span>};<br />
+          <span class="string">MY_OBJECT</span>.key =
+          <span class="string">'otherValue'</span>;
+        </code>
+        <p>
+          Also, the contents of an array are not protected, so the following
+          statement is executed without problems.
+        </p>
+        <code>
+          <span class="keyword">const</span>
+          <span class="string">MY_ARRAY</span> = [<span class="string"
+            >'HTML'</span
+          >
+          , <span class="string">'CSS'</span>];<br />
+          <span class="string">MY_ARRAY</span>.<span class="function">push</span
+          >(<span class="string">'JAVASCRIPT'</span>);<br />
+          console.<span class="function">log</span>(<span class="string"
+            >MY_ARRAY</span
+          >); //logs ['HTML','CSS','JAVASCRIPT'];
+        </code>
+      </section>
+
+      <section class="main-section" id="data_types">
+        <header>Data Types</header>
+        <p>The latest ECMAScript standard defines eight data types:</p>
+        <ul>
+          <li>
+            <p>Seven data types that are primitives:</p>
+            <ol>
+              <li>
+                <p>
+                  <span class="bold">Boolean</span>.
+                  <span class="important">true</span> and
+                  <span class="important">false</span>.
+                </p>
+              </li>
+              <li>
+                <p>
+                  <span class="bold">null</span>. A special keyword denoting a
+                  <span class="important">null</span> value. (Because JavaScript
+                  is case-sensitive, null is not the same as
+                  <span class="important">Null</span>,
+                  <span class="important">NULL</span>, or any other variant.)
+                </p>
+              </li>
+              <li>
+                <p>
+                  <span class="bold">undefined</span>. A top-level property
+                  whose value is not defined.
+                </p>
+              </li>
+              <li>
+                <p>
+                  <span class="bold">Number</span>. An integer or floating point
+                  number. For example: <span class="important">42</span> or
+                  <span class="important">3.14159</span>.
+                </p>
+              </li>
+              <li>
+                <p>
+                  <span class="bold">BigInt</span>. An integer with arbitrary
+                  precision. For example:
+                  <span class="important">9007199254740992n</span>.
+                </p>
+              </li>
+              <li>
+                <p>
+                  <span class="bold">String</span>. A sequence of characters
+                  that represent a text value. For example: "Howdy"
+                </p>
+              </li>
+              <li>
+                <p>
+                  <span class="bold">Symbol</span> (new in ECMAScript 2015). A
+                  data type whose instances are unique and immutable.
+                </p>
+              </li>
+            </ol>
+          </li>
+          <li>
+            <p>and Object</p>
+          </li>
+        </ul>
+        <p>
+          Although these data types are relatively few, they enable you to
+          perform useful functions with your applications. Objects and functions
+          are the other fundamental elements in the language. You can think of
+          objects as named containers for values, and functions as procedures
+          that your script can perform.
+        </p>
+      </section>
+
+      <section class="main-section" id="functions">
+        <header>Functions</header>
+        <p>
+          Functions are one of the fundamental building blocks in JavaScript. A
+          function in JavaScript is similar to a procedure—a set of statements
+          that performs a task or calculates a value, but for a procedure to
+          qualify as a function, it should take some input and return an output
+          where there is some obvious relationship between the input and the
+          output. To use a function, you must define it somewhere in the scope
+          from which you wish to call it.
+        </p>
+        <p>
+          A function definition (also called a function declaration, or function
+          statement) consists of the function keyword, followed by:
+        </p>
+        <ul>
+          <li>
+            <p>The name of the function.</p>
+          </li>
+          <li>
+            <p>
+              A list of parameters to the function, enclosed in parentheses and
+              separated by commas.
+            </p>
+          </li>
+          <li>
+            <p>
+              The JavaScript statements that define the function, enclosed in
+              curly brackets, <span class="important">{...}</span>.
+            </p>
+          </li>
+        </ul>
+        <p>
+          For example, the following code defines a simple function named
+          square:
+        </p>
+        <code>
+          <span class="keyword">function</span>
+          <span class="function">square</span>(number) {<br />
+          <span class="keyword">return</span> number * number;<br />
+          }
+        </code>
+        <p>
+          The function square takes one parameter, called number. The function
+          consists of one statement that says to return the parameter of the
+          function (that is, number) multiplied by itself. The statement return
+          specifies the value returned by the function:
+        </p>
+        <code> <span class="keyword">return</span> number * number; </code>
+      </section>
+
+      <section class="main-section" id="references">
+        <header>References</header>
+        <p>
+          All the documentation from this page is taken from
+          <a href="https://developer.mozilla.org/en-US/">MDN web docs</a>
+        </p>
+      </section>
+    </main>
+  </body>
+</html>
